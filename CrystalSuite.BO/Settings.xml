@@ -1,0 +1,9 @@
+﻿<Settings>
+  <LocalReportFolder>C:\Program Files\Common Files\Hutson Software\Reporter\Reports\</LocalReportFolder>
+  <ServerReportFolder>\\HutsonFileServer\C$\Program Files\Common Files\Hutson Software\Reporter\Reports\</ServerReportFolder>
+  <ServerName>HutsonDataServer</ServerName>
+  <DatabaseName>HutsonDatabase</DatabaseName>
+  <IntegratedSecurity>0</IntegratedSecurity>
+  <UserID>HutsonSoftware</UserID>
+  <Password>Hu+50n50f+w@r3!</Password>
+</Settings>
