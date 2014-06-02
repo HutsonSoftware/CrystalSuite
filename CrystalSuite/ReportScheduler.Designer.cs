@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Jobs");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Job Monitor");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Error Logs");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Jobs");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Job Monitor");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Error Logs");
             this.JobsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newJobToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -123,22 +123,23 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode4.ContextMenuStrip = this.JobsContextMenuStrip;
-            treeNode4.Name = "Jobs";
-            treeNode4.Tag = "Jobs";
-            treeNode4.Text = "Jobs";
-            treeNode5.Name = "JobMonitor";
-            treeNode5.Tag = "JobMonitor";
-            treeNode5.Text = "Job Monitor";
-            treeNode6.Name = "ErrorLogs";
-            treeNode6.Tag = "ErrorLogs";
-            treeNode6.Text = "Error Logs";
+            treeNode1.ContextMenuStrip = this.JobsContextMenuStrip;
+            treeNode1.Name = "Jobs";
+            treeNode1.Tag = "Jobs";
+            treeNode1.Text = "Jobs";
+            treeNode2.Name = "JobMonitor";
+            treeNode2.Tag = "JobMonitor";
+            treeNode2.Text = "Job Monitor";
+            treeNode3.Name = "ErrorLogs";
+            treeNode3.Tag = "ErrorLogs";
+            treeNode3.Text = "Error Logs";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(271, 566);
             this.treeView1.TabIndex = 0;
+            this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp);
             // 
             // startJobToolStripMenuItem

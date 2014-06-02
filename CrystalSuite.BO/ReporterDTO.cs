@@ -44,6 +44,54 @@ namespace CrystalSuite
         public string ParameterValue { get; set; }
     }
 
+    public enum eFrequency { Daily, Weekly, Monthly }
+    public enum eAction { GoToNextStep, QuitReportingSuccess, QuitReportingFailure }
+    public enum eFrequencyN { first, second, third, fourth, last }
+    public enum eFrequencyDays { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, day, weekday, weekendday }
+
+    #region SimpleReportSchedulerDesign
+    public class ScheduledReport
+    {
+        public Report SelectedReport { get; set; }
+        public ParameterSet ParameterSet { get; set; }
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public bool Enabled { get; set; }
+        public string Created { get; set; }
+        public string Modified { get; set; }
+        public ReportSchedule Schedule { get; set; }
+    }
+    public class ReportSchedule
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public bool Enabled { get; set; }
+        public string Created { get; set; }
+        public string Modified { get; set; }
+        public eFrequency Frequency { get; set; }
+        public int RecursEveryN { get; set; }
+        public string OccursOnceAtTime { get; set; }
+        public string OccursEveryN { get; set; }
+        public string OccursEveryUnits { get; set; }
+        public string OccursEveryStartTime { get; set; }
+        public string OccursEveryEndTime { get; set; }
+        public int DaysBitwise { get; set; }
+        public int DayN { get; set; }
+        public int EveryNMonths { get; set; }
+        public eFrequencyN TheBlank { get; set; }
+        public eFrequencyDays TheBlankWhat { get; set; }
+        public int TheBlankWhatofNMonths { get; set; }
+        public string StartDate { get; set; }
+        public bool HasEndDate { get; set; }
+        public string EndDate { get; set; }
+        public string WeeklyFrequency { get; set; }
+        public string DailyFrequency { get; set; }
+    }
+    #endregion
+
+    #region ComplexReportSchedulerDesign
     public class JobBase
     {
         public string ID { get; set; }
@@ -66,15 +114,15 @@ namespace CrystalSuite
     public class JobStep : JobBase
     {
         public int Number { get; set; }
-        public eJobAction OnSuccess { get; set; }
-        public eJobAction OnFailure { get; set; }
+        public eAction OnSuccess { get; set; }
+        public eAction OnFailure { get; set; }
         public int RetryAttempts { get; set; }
         public int RetryIntervalMinutes { get; set; }
     }
 
     public class JobSchedule : JobBase
     {
-        public eJobFrequency Frequency { get; set; }
+        public eFrequency Frequency { get; set; }
         public int RecursEveryN { get; set; }
         public string OccursOnceAtTime { get; set; }
         public string OccursEveryN { get; set; }
@@ -93,10 +141,6 @@ namespace CrystalSuite
         public string WeeklyFrequency { get; set; }
         public string DailyFrequency { get; set; }
     }
-
-    public enum eJobFrequency { Daily, Weekly, Monthly }
-    public enum eJobAction { GoToNextStep, QuitReportingSuccess, QuitReportingFailure }
-    public enum eFrequencyN { first, second, third, fourth, last }
-    public enum eFrequencyDays { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, day, weekday, weekendday }
+    #endregion
 
 }

@@ -36,30 +36,39 @@ namespace CrystalSuite
 
         private void treeView1_MouseUp(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Right)
+            switch (e.Button)
             {
-                Point p = new Point(e.X, e.Y);
-                TreeNode node = treeView1.GetNodeAt(p);
+                case MouseButtons.Right:
+                    {
+                        Point p = new Point(e.X, e.Y);
+                        TreeNode node = treeView1.GetNodeAt(p);
 
-                if(node != null)
-                {
-                    _oldSelectNode = treeView1.SelectedNode;
-			        treeView1.SelectedNode = node;
-			        
-                    switch(Convert.ToString(node.Tag))
-			        {
-				        case "Jobs":
-					        JobsContextMenuStrip.Show(treeView1, p);
-					        break;
-                        case "Job":
-                            JobContextMenuStrip.Show(treeView1, p);
-                            break;
-			        }
+                        if (node != null)
+                        {
+                            _oldSelectNode = treeView1.SelectedNode;
+                            treeView1.SelectedNode = node;
 
-			        treeView1.SelectedNode = _oldSelectNode;
-			        _oldSelectNode = null;
-                }
+                            switch (Convert.ToString(node.Tag))
+                            {
+                                case "Jobs":
+                                    JobsContextMenuStrip.Show(treeView1, p);
+                                    break;
+                                case "Job":
+                                    JobContextMenuStrip.Show(treeView1, p);
+                                    break;
+                            }
+
+                            treeView1.SelectedNode = _oldSelectNode;
+                            _oldSelectNode = null;
+                        }
+                        break;
+                    }
             }
+        }
+
+        private void treeView1_DoubleClick(object sender, EventArgs e)
+        {
+            
         }
 
         #region Context Menus
@@ -86,49 +95,93 @@ namespace CrystalSuite
 
         private void manageSchedulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ManageSchedules();
+        }
 
+        private void ManageSchedules()
+        {
+            
         }
 
         private void viewAllHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewAllHistory();
+        }
+
+        private void ViewAllHistory()
         {
 
         }
 
         private void viewJobToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ViewJob();
+        }
 
+        private void ViewJob()
+        {
+            
         }
         
         private void startJobToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            StartJob();
+        }
 
+        private void StartJob()
+        {
+            
         }
         
         private void stopJobToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            StopJob();
+        }
 
+        private void StopJob()
+        {
+            
         }
 
         private void viewHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ViewHistory();
+        }
 
+        private void ViewHistory()
+        {
+            
         }
 
         private void enableToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            EnableJob();
+        }
 
+        private void EnableJob()
+        {
+            
         }
 
         private void disableToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DisableJob();
+        }
 
+        private void DisableJob()
+        {
+            
         }
 
         private void deleteJobToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            DeleteJob();
+        }
 
+        private void DeleteJob()
+        {
+            
         }
         #endregion
-
     }
 }
